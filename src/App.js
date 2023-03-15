@@ -14,6 +14,10 @@ export default function App() {
             setTenzies(true)
         }
     }, [dice])
+
+    const styles = {
+      width : tenzies ? "150px" : "100px"
+    }
     
     function randomDieValue() {
         return Math.ceil(Math.random() * 6)
@@ -62,8 +66,8 @@ export default function App() {
             {tenzies && <Confetti />}
             <h1>Tenzies</h1>
             <p>Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
-            <div className="die-container">{diceElements}</div>
-            <button className="roll-dice" onClick={rollUnheldDice}>
+            <div className="grid grid-cols-5 gap-5 pb-10">{diceElements}</div>
+            <button className="roll-dice" style={styles} onClick={rollUnheldDice}>
                 {tenzies ? "Reset Game" : "Roll"}
             </button>
         </main>

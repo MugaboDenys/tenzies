@@ -57,7 +57,7 @@ export default function App() {
         }))
     }
 
-    const diceElements = dice.map((die) => (
+    const diceElements = dice.map(die => (
         <Die key={die.id} {...die} hold={() => holdDice(die.id)} />
     ))
 
